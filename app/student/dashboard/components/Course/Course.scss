@@ -1,0 +1,40 @@
+.courseCard{
+    border-radius: 0.3125rem;
+    border: 1px solid rgba(0, 57, 228, 0.20);
+    background: #FFF;
+    margin: 1.94rem auto 2.37rem;
+    padding: 2rem 1.75rem;
+
+    &__header{
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 1.25rem;
+
+        & > p:first-of-type{
+            color: #000D33;
+            font-size: 1.25rem;
+            font-weight: 600;
+            line-height: 150%;
+            letter-spacing: -0.02375rem;
+        }
+
+        & > p:last-of-type{
+            background: #FFF3DB;
+            color: #303030;
+            font-size: 1.25rem;
+            font-weight: 600;
+            line-height: 150%; 
+            letter-spacing: -0.02375rem;
+            padding: 0.31rem;
+        }
+    }
+
+    &__title{
+        color: #114CFE;
+        font-size: 1.75rem;
+        font-weight: 600;
+        line-height: 150%;
+        letter-spacing: -0.03325rem;
+        padding-bottom: 1.81rem;
+    }
+}
