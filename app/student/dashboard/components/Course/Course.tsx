@@ -2,22 +2,33 @@ import Link from 'next/link'
 import './Course.scss'
 import ProgressBar from './ProgressBar/ProgressBar'
 
-const Course = () => {
+type CourseProp = {
+  courseName: string;
+  noOfWeeks: number; 
+  progress: number;
+}
+
+const Course = (props: CourseProp) => {
   return (
     <div className='courseCard'>
         <div className="courseCard__header">
             <p>Your Course</p>
-            <p>4 weeks</p>
+            <p>{props.noOfWeeks} weeks</p>
         </div>
 
-        <p className="courseCard__title">Introduction to UI/UX Design</p>
+        <p className="courseCard__title">{props.courseName}</p>
 
         <div className="courseCard__progress">
+          {/* 
+            DESIGN CASE
+            - Each Progress Bars has different colors, they can be from the API or hardCoded. 
+          
+          */}
           <ProgressBar 
             backgroundColor='#F4BC45'
             border='2px solid lightgrey'
-            name={`Progress ( 20% )`}
-            percent={20}
+            name={`Progress ${props.progress}%`}
+            percent={props.progress}
           />
         </div>
 

@@ -1,0 +1,58 @@
+.notificationCard{
+    flex: 0.5;
+    border-radius: 0.3125rem;
+    border: 1px solid rgba(0, 57, 228, 0.20);
+    background: #FFF;
+
+    h2{
+        color:#000D33;
+        font-size: 1.5rem;
+        font-weight: 600;
+        line-height: 150%;
+        letter-spacing: -0.0285rem;
+        padding: 2rem 0 1rem 2rem;
+    }
+
+    .notificationCard__lists{
+
+        .notificationCard__list{
+            padding: 1.5rem 0 1.25rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-top: 1px solid #E9E9E9;
+            border-bottom: 1px solid #E9E9E9;
+            cursor: pointer;
+
+            &Detail{
+                p{
+                    color: #303030;
+                    font-size: 1.5rem;
+                    font-weight: 500;
+                    line-height: 150%;
+                    letter-spacing: -0.0285rem;
+                }
+                
+                h3{
+                    color:#000D33;
+                    font-size: 1.5rem;
+                    font-weight: 400;
+                    line-height: 150%;
+                    letter-spacing: -0.0285rem;
+                }
+            }
+
+            &Date{
+                margin-right: 2rem;
+                background: #D1FFBB;
+                padding: 0.31rem 0.62rem;
+                color: #303030;
+                font-size: 1rem;
+                font-weight: 400;
+                line-height: 150%;
+                letter-spacing: -0.019rem;
+            }
+        }
+    }
+
+}

@@ -2,8 +2,10 @@
     border-radius: 0.3125rem;
     border: 1px solid rgba(0, 57, 228, 0.20);
     background: #FFF;
-    margin: 1.94rem auto 2.37rem;
+    margin: 1.94rem auto 0.5rem;
     padding: 2rem 1.75rem;
+    flex: 0 0 50%;
+    // gap: 0.5rem;
 
     &__header{
         display: flex;
