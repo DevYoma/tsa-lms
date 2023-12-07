@@ -1,11 +1,14 @@
 import Link from 'next/link'
 import './Course.scss'
 import ProgressBar from './ProgressBar/ProgressBar'
+import Duration from '../Duration/Duration';
 
 type CourseProp = {
   courseName: string;
   noOfWeeks: number; 
   progress: number;
+  progressBarColor?: string;
+  // cardWidth: number => prop to dynamically change the width based on the scenerio
 }
 
 const Course = (props: CourseProp) => {
@@ -13,7 +16,8 @@ const Course = (props: CourseProp) => {
     <div className='courseCard'>
         <div className="courseCard__header">
             <p>Your Course</p>
-            <p>{props.noOfWeeks} weeks</p>
+            {/* <p>{props.noOfWeeks} weeks</p> */}
+            <Duration weeks={props.noOfWeeks}/>
         </div>
 
         <p className="courseCard__title">{props.courseName}</p>
@@ -25,7 +29,7 @@ const Course = (props: CourseProp) => {
           
           */}
           <ProgressBar 
-            backgroundColor='#F4BC45'
+            backgroundColor={props.progressBarColor || "#F4BC45"}
             border='2px solid lightgrey'
             name={`Progress ${props.progress}%`}
             percent={props.progress}

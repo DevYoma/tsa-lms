@@ -4,7 +4,7 @@ import NotificationBell from '../public/assets/HeaderNotificationBell.png';
 
 const StudentHeader = () => {
   return (
-    <div className="flex items-center justify-end gap-[3.81rem] mb-2 pt-4 pr-[6.25rem]">
+    <div className="flex items-center justify-end gap-[3.81rem] mb-6 pt-4 pr-[6.25rem]">
         <Image 
             alt='Notification'
             src={NotificationBell}

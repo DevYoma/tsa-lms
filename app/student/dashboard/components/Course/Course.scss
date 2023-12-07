@@ -2,32 +2,23 @@
     border-radius: 0.3125rem;
     border: 1px solid rgba(0, 57, 228, 0.20);
     background: #FFF;
-    margin: 1.94rem auto 0.5rem;
+    margin: 1.94rem 0 0.5rem 0;
     padding: 2rem 1.75rem;
-    flex: 0 0 50%;
-    // gap: 0.5rem;
+    width: 100%;
+    flex: 1 0 50%;
+    cursor: pointer;
 
     &__header{
         display: flex;
         justify-content: space-between;
         margin-bottom: 1.25rem;
 
-        & > p:first-of-type{
+        & > p{
             color: #000D33;
             font-size: 1.25rem;
             font-weight: 600;
             line-height: 150%;
             letter-spacing: -0.02375rem;
-        }
-
-        & > p:last-of-type{
-            background: #FFF3DB;
-            color: #303030;
-            font-size: 1.25rem;
-            font-weight: 600;
-            line-height: 150%; 
-            letter-spacing: -0.02375rem;
-            padding: 0.31rem;
         }
     }
 

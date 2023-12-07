@@ -3,7 +3,10 @@ import { Dosis, Inter } from 'next/font/google'
 import './globals.scss'
 
 // const inter = Inter({ subsets: ['latin'] })
-const dosis = Dosis({ subsets: ['latin'] })
+const dosis = Dosis({ 
+    subsets: ['latin'], 
+    variable: '--font-dosis' 
+})
 
 export const metadata: Metadata = {
   title: 'TSA LMS',

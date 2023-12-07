@@ -1,17 +1,20 @@
 import Image from 'next/image';
 import './AssignmentCard.scss';
 import Padlock from '@/public/assets/padlock.svg';
+import { useRouter } from 'next/navigation';
 
 // Backend => conditional style from the backend for the opacity
 
 const AssignmentCard = () => {
+  const router = useRouter();
   const assignmentData = [
     {
       id: 1, 
       week: 1, 
       title: "Design your Portfolio",
       dueDate: "28th Feb, 2024", // convert the date from the api to this format
-      locked: false
+      locked: false, 
+      link: "/student/dashboard/assignments"
     },
     {
       id: 2, 
@@ -19,13 +22,15 @@ const AssignmentCard = () => {
       title: "Generate your Brief", 
       dueDate: "", 
       locked: true,
+      link: ""
     }, 
     {
       id: 3, 
       week: 3, 
       title: "Generate your Brief", 
       dueDate: "", 
-      locked: true
+      locked: true, 
+      link: ""
     }
   ]
   return (
@@ -36,6 +41,7 @@ const AssignmentCard = () => {
         {assignmentData.map((assignment) => (
             <div 
               key={assignment.id}
+              onClick={() => assignment.link  && router.push(assignment.link)}
               className={`assignmentCard__list ${assignment.locked && 'assignmentOpacity'}`}
             >
               <div className="assignmentCard__listDetail">
@@ -52,7 +58,11 @@ const AssignmentCard = () => {
                   }}
                 />
               ) : (
-                <div className="assignmentCard__listDate">Due: {assignment.dueDate}</div>
+                <div 
+                  className="assignmentCard__listDate"
+                >
+                  Due: {assignment.dueDate}
+                </div>
               )}
           </div>
         ))}
