@@ -48,6 +48,8 @@ export default function StudentDashboard() {
 
         {/* In a situation where the user has more than 1 course */}
         {/* have a condition to display JUST 1 COURSE WITH 100% AND MULTIPLE ONES WITH 45% FLEX BASIS WIDTH */}
+        
+        {/* @ts-ignore */}
         <div className="flex overflow-x-scroll gap-[1rem] mb-8 no-scrollbar" ref={courseRef}>
           <Course 
             courseName="Introduction to UI/UX Design"
