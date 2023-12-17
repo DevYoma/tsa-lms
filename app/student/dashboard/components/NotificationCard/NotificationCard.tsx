@@ -1,10 +1,14 @@
+"use client"
+
 import './NotificationCard.scss';
+import { useRouter } from 'next/navigation';
 
 type Prop = {
   showHeader?: boolean;
 }
 
 const NotificationCard = ({ showHeader=true }: Prop) => {
+  const router = useRouter();
   const notificationData = [  // can be more or less than 3 from the backend,
     {
       id: 1, 
@@ -28,6 +32,7 @@ const NotificationCard = ({ showHeader=true }: Prop) => {
             <div 
               key={notification.id}
               className="notificationCard__list"
+              onClick={() => router.push('/student/dashboard/notifications')}
             >
               <div className="notificationCard__listDetail">
                 <p>Instructor</p>
