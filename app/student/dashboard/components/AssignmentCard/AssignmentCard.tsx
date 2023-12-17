@@ -1,12 +1,27 @@
+"use client"
+
 import Image from 'next/image';
 import './AssignmentCard.scss';
 import Padlock from '@/public/assets/padlock.svg';
-import { useRouter } from 'next/navigation';
+import { useRouter, usePathname } from 'next/navigation';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import { useState } from 'react';
+
+type Prop = {
+  showHeader?: boolean;
+}
 
 // Backend => conditional style from the backend for the opacity
 
-const AssignmentCard = () => {
+const AssignmentCard = ({ showHeader=true }: Prop) => {
   const router = useRouter();
+  const pathname = usePathname();
+  const [open, setOpen] = useState(false);
+
+  const toggleAccordion = () => {
+    setOpen((prevOpen) => !prevOpen);
+  }
+
   const assignmentData = [
     {
       id: 1, 
@@ -35,7 +50,7 @@ const AssignmentCard = () => {
   ]
   return (
     <div className="assignmentCard">
-      <h2>Assignments</h2>
+      {showHeader && <h2>Assignments</h2>}
 
       <div className="assignmentCard__lists">
         {assignmentData.map((assignment) => (
@@ -47,6 +62,7 @@ const AssignmentCard = () => {
               <div className="assignmentCard__listDetail">
                 <p>Week {assignment.week}:</p>
                 <h3>{assignment.title}</h3>
+                {open && (<div className='border border-red-400 w-full'>Wonderful</div>)}
               </div>
     
               {assignment.locked ? (
@@ -58,10 +74,20 @@ const AssignmentCard = () => {
                   }}
                 />
               ) : (
-                <div 
-                  className="assignmentCard__listDate"
-                >
-                  Due: {assignment.dueDate}
+                <div className='flex items-center'>
+                  <div 
+                    className="assignmentCard__listDate"
+                  >
+                    Due: {assignment.dueDate}
+                  </div>
+                  {pathname === "/student/dashboard/assignments" && 
+                    (<ExpandMoreIcon 
+                      className='ml-[2.56rem]' 
+                      fontSize='large'
+                      onClick={toggleAccordion}
+                    />
+                    )
+                  }
                 </div>
               )}
           </div>

@@ -17,12 +17,13 @@
     .assignmentCard__lists{
 
         .assignmentCard__list{
-            padding: 1.5rem 0 1.25rem 2rem;
+            padding: 1.5rem 2rem 1.25rem 2rem;
             display: flex;
             align-items: center;
             justify-content: space-between;
             border-top: 1px solid #E9E9E9;
             border-bottom: 1px solid #E9E9E9;
+            // border: 1px solid red;
             cursor: pointer;
 
             &.assignmentOpacity{
@@ -49,7 +50,6 @@
             }
 
             &Date{
-                margin-right: 2rem;
                 background: #D1FFBB;
                 padding: 0.31rem 0.62rem;
                 color: #303030;

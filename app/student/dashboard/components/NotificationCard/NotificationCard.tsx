@@ -1,6 +1,10 @@
 import './NotificationCard.scss';
 
-const NotificationCard = () => {
+type Prop = {
+  showHeader?: boolean;
+}
+
+const NotificationCard = ({ showHeader=true }: Prop) => {
   const notificationData = [  // can be more or less than 3 from the backend,
     {
       id: 1, 
@@ -17,7 +21,7 @@ const NotificationCard = () => {
   ]
   return (
     <div className="notificationCard">
-      <h2>Notifications</h2>
+      {showHeader && <h2>Notifications</h2>}
 
       <div className="notificationCard__lists">
         {notificationData.map((notification) => (
